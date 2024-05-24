@@ -31,6 +31,6 @@ export const postRouter = createTRPCRouter({
   }),
 
   getEnv: publicProcedure.query(() => {
-    return process.env;
+    return process.env.VERCEL_URL;
   }),
 });
