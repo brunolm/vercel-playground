@@ -1,4 +1,5 @@
 import { api } from "@/trpc/server";
+import { Test } from "./_components/test";
 
 export default async function Home() {
   return (
@@ -14,6 +15,7 @@ async function CrudShowcase() {
   return (
     <div className="w-full max-w-xs">
       <pre>{JSON.stringify(env, null, 2)}</pre>
+      <Test />
     </div>
   );
 }
