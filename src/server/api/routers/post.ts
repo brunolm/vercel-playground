@@ -30,7 +30,7 @@ export const postRouter = createTRPCRouter({
     return post;
   }),
 
-  getEnv: publicProcedure.query(() => {
+  getEnv: publicProcedure.query((opts) => {
     // get all environment variables that starts with VERCEL_
     const env = Object.entries(process.env)
       .filter(([key]) => key.startsWith("VERCEL_"))
@@ -42,6 +42,11 @@ export const postRouter = createTRPCRouter({
         {} as Record<string, string>,
       );
 
-    return env;
+    return {
+      env,
+      req: {
+        ctx: opts.ctx,
+      },
+    };
   }),
 });
