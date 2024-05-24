@@ -44,6 +44,7 @@ export const postRouter = createTRPCRouter({
 
     return {
       env,
+      custom: "develop",
       req: {
         ctx: opts.ctx,
       },
