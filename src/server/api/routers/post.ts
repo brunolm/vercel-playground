@@ -29,4 +29,8 @@ export const postRouter = createTRPCRouter({
   getLatest: publicProcedure.query(() => {
     return post;
   }),
+
+  getEnv: publicProcedure.query(() => {
+    return process.env;
+  }),
 });
