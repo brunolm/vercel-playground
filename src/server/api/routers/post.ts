@@ -13,11 +13,13 @@ export const postRouter = createTRPCRouter({
         {} as Record<string, string>,
       );
 
+    const { headers } = opts.ctx;
+
     return {
       env,
       custom: "develop",
       req: {
-        ctx: opts.ctx,
+        host: headers.get("host"),
       },
     };
   }),
