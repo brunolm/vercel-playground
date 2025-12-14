@@ -4,7 +4,7 @@ import { Bla } from "./_components/bla";
 
 export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-start bg-black text-2xl text-white">
+    <main className="mx-1 flex min-h-screen flex-col items-start bg-black text-2xl text-white">
       <Bla />
     </main>
   );
