@@ -12,6 +12,7 @@ export default async function Home() {
 }
 
 async function CrudShowcase() {
+  const navigator = window.navigator;
   const txt = `${navigator.userAgent}
 ${JSON.stringify((navigator as any).userAgentData, null, 2)}
 
