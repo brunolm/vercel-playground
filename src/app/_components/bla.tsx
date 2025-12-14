@@ -2,18 +2,22 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function Bla() {
-  const navigator = window.navigator;
-  const txt = `${navigator.userAgent}
+  const [clickStatus, setClickStatus] = useState("");
+  const [txt, setTxt] = useState("");
+
+  useEffect(() => {
+    const navigator = window.navigator;
+    setTxt(`${navigator.userAgent}
 ${JSON.stringify((navigator as any).userAgentData, null, 2)}
 
 ${JSON.stringify(navigator.languages, null, 2)}
 ${JSON.stringify(navigator.language, null, 2)}
-`;
+`);
+  }, []);
 
-  const [clickStatus, setClickStatus] = useState("");
   const handleClick = useCallback((e) => {
     setClickStatus(`
 isTrusted: ${e.isTrusted}
