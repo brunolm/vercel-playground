@@ -8,6 +8,10 @@ export default async function Home() {
       <div className="mx-3 flex-1">
         <Bla />
       </div>
+
+      <div className="mx-3">
+        <iframe title="frame" src="/frame" width="1150px" height="600" />
+      </div>
     </main>
   );
 }
