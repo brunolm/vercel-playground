@@ -39,7 +39,7 @@ export function ServiceWorker() {
   }, []);
 
   return (
-    <div className="text-xs">
+    <div className="">
       service worker ua: <span>{userAgent}</span>
     </div>
   );
