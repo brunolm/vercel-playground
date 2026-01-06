@@ -12,3 +12,13 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   console.log("[Service worker] User Agent:", navigator.userAgent);
 });
+
+self.addEventListener("message", (event) => {
+  if (event.data.type === "GET_USER_AGENT") {
+    // Send response back
+    event.ports[0].postMessage({
+      userAgent: navigator.userAgent,
+      timestamp: Date.now(),
+    });
+  }
+});
