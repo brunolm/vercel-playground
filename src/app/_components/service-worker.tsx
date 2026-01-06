@@ -38,7 +38,12 @@ export function ServiceWorker() {
       <button type="button" onClick={getUserAgentFromSW}>
         Get User Agent from Service Worker
       </button>
-      <input id="swUserAgent" value={userAgent} readOnly />
+      <input
+        id="swUserAgent"
+        value={userAgent}
+        readOnly
+        className="bg-black text-white"
+      />
     </div>
   );
 }
