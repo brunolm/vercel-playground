@@ -23,7 +23,7 @@ export function ServiceWorker() {
 
     const messageChannel = new MessageChannel();
 
-    messageChannel.port1.onmessage = (event: any) => {
+    messageChannel.port1.onmessage = (event) => {
       console.log("Received from SW:", event.data);
       setUserAgent(event.data.userAgent);
     };
