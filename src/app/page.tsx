@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import { Bla } from "./_components/bla";
+import { ServiceWorker } from "./_components/service-worker";
 
 export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-start bg-black text-2xl text-white">
+      <ServiceWorker />
       <div className="mx-3 flex-1">
         <Bla />
       </div>
