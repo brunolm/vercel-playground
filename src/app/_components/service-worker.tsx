@@ -8,13 +8,6 @@ import { useEffect, useState } from "react";
 export function ServiceWorker() {
   const [userAgent, setUserAgent] = useState<string>("");
 
-  useEffect(() => {
-    navigator.serviceWorker
-      .register("sw.js")
-      .then((reg) => console.log("@@@ Registered", reg))
-      .catch((err) => console.log("@@@ Failed", err));
-  }, []);
-
   const getUserAgentFromSW = async () => {
     if (!navigator.serviceWorker.controller) {
       console.error("No active service worker controller");
@@ -32,6 +25,18 @@ export function ServiceWorker() {
       messageChannel.port2,
     ]);
   };
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: x
+  useEffect(() => {
+    navigator.serviceWorker
+      .register("sw.js")
+      .then((reg) => console.log("@@@ Registered", reg))
+      .catch((err) => console.log("@@@ Failed", err));
+
+    setTimeout(() => {
+      void getUserAgentFromSW();
+    }, 2000);
+  }, []);
 
   return (
     <div className="flex flex-col gap-2 text-xs">
