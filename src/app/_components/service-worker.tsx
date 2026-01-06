@@ -40,8 +40,10 @@ export function ServiceWorker() {
 
   return (
     <div className="">
-      <span className="text-xs">sw ua:</span>
-      <pre>{userAgent}</pre>
+      <div className="flex gap-2">
+        <span className="text-xs">sw ua:</span>
+        <pre>{userAgent}</pre>
+      </div>
     </div>
   );
 }
