@@ -32,6 +32,7 @@ clientY: ${e.clientY}
 
   return (
     <div className="w-full max-w-xs">
+      <span className="text-xs">ua:</span>
       <pre>{txt}</pre>
 
       <button id="clickHere" type="button" onClick={handleClick}>
