@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /** biome-ignore-all lint/suspicious/noExplicitAny: bla */
 "use client";
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -22,7 +23,7 @@ export function ServiceWorker() {
 
     const messageChannel = new MessageChannel();
 
-    messageChannel.port1.onmessage = (event) => {
+    messageChannel.port1.onmessage = (event: any) => {
       console.log("Received from SW:", event.data);
       setUserAgent(event.data.userAgent);
     };
