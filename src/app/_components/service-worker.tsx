@@ -34,16 +34,11 @@ export function ServiceWorker() {
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 text-xs">
       <button type="button" onClick={getUserAgentFromSW}>
         Get User Agent from Service Worker
       </button>
-      <input
-        id="swUserAgent"
-        value={userAgent}
-        readOnly
-        className="bg-black text-white"
-      />
+      service worker ua: <span>{userAgent}</span>
     </div>
   );
 }
