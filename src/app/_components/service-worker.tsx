@@ -30,12 +30,12 @@ export function ServiceWorker() {
   useEffect(() => {
     navigator.serviceWorker
       .register("sw.js")
-      .then((reg) => console.log("@@@ Registered", reg))
-      .catch((err) => console.log("@@@ Failed", err));
+      .then((reg) => {
+        console.log("@@@ Registered", reg);
 
-    setTimeout(() => {
-      void getUserAgentFromSW();
-    }, 2000);
+        void getUserAgentFromSW();
+      })
+      .catch((err) => console.log("@@@ Failed", err));
   }, []);
 
   return (
