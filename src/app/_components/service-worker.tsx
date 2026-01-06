@@ -40,7 +40,8 @@ export function ServiceWorker() {
 
   return (
     <div className="">
-      service worker ua: <pre>{userAgent}</pre>
+      <span className="text-xs">sw ua:</span>
+      <pre>{userAgent}</pre>
     </div>
   );
 }
