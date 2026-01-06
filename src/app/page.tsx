@@ -6,8 +6,8 @@ import { ServiceWorker } from "./_components/service-worker";
 export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-start bg-black text-2xl text-white">
-      <ServiceWorker />
       <div className="mx-3 flex-1">
+        <ServiceWorker />
         <Bla />
       </div>
 
